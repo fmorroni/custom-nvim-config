@@ -9,6 +9,8 @@ vim.opt.showcmdloc = "statusline"
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.relativenumber = true
+-- Absolute number for current line
+vim.opt.number = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
