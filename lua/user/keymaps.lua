@@ -48,3 +48,6 @@ map('n', '<leader>c', '<CMD>bdelete<CR>')
 -- Move line down/up
 map('n', '<A-j>', '<CMD>m +1<CR>')
 map('n', '<A-k>', '<CMD>m -2<CR>')
+
+map('n', '<leader>lp', '<CMD>Lazy<CR>')
+map('n', '<leader>li', '<CMD>LspInfo<CR>')
