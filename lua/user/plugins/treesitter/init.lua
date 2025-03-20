@@ -3,9 +3,9 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      vim.wo.foldmethod = "expr"
-      vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-      vim.wo.foldlevel = 1
+      -- vim.wo.foldmethod = "expr"
+      -- vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+      -- vim.wo.foldlevel = 5
 
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
