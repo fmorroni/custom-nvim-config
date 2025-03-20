@@ -29,4 +29,5 @@ return {
       })
     end
   },
+  require('user.plugins.treesitter.textobjects'),
 }
