@@ -34,14 +34,37 @@ return {
         builtin.find_files(opts)
       end
 
-      local find_files_no_ignore = function()
-        find_files_current_line({ no_ignore = true })
+      local show_ignored = false
+      local show_hidden = false
+
+      local toggle_find_files_no_ignore = function()
+        if not show_ignored then
+          find_files_current_line({ no_ignore = true })
+          show_ignored = true
+        else
+          find_files_current_line()
+          show_ignored = false
+        end
       end
-      local find_files_with_hidden = function()
-        find_files_current_line({ hidden = true })
+      local toggle_find_files_with_hidden = function()
+        if not show_hidden then
+          find_files_current_line({ hidden = true })
+          show_hidden = true
+        else
+          find_files_current_line()
+          show_hidden = false
+        end
       end
-      local find_files_all = function()
-        find_files_current_line({ no_ignore = true, hidden = true })
+      local toggle_find_files_all = function()
+        if not show_ignored or not show_hidden then
+          find_files_current_line({ no_ignore = true, hidden = true })
+          show_ignored = true
+          show_hidden = true
+        else
+          find_files_current_line()
+          show_ignored = false
+          show_hidden = false
+        end
       end
 
       return {
@@ -55,9 +78,9 @@ return {
               ["<A-j>"] = actions.preview_scrolling_down,
               ["<A-k>"] = actions.preview_scrolling_up,
               ["<A-p>"] = actions_layout.toggle_preview,
-              ["<A-i>"] = find_files_no_ignore,
-              ["<A-h>"] = find_files_with_hidden,
-              ["<A-a>"] = find_files_all,
+              ["<A-i>"] = toggle_find_files_no_ignore,
+              ["<A-h>"] = toggle_find_files_with_hidden,
+              ["<A-a>"] = toggle_find_files_all,
               ["<C-d>"] = actions.delete_buffer,
             },
             n = {
@@ -68,9 +91,9 @@ return {
               ["<A-j>"] = actions.preview_scrolling_down,
               ["<A-k>"] = actions.preview_scrolling_up,
               ["<A-p>"] = actions_layout.toggle_preview,
-              ["<A-i>"] = find_files_no_ignore,
-              ["<A-h>"] = find_files_with_hidden,
-              ["<A-a>"] = find_files_all,
+              ["<A-i>"] = toggle_find_files_no_ignore,
+              ["<A-h>"] = toggle_find_files_with_hidden,
+              ["<A-a>"] = toggle_find_files_all,
               ["dd"] = actions.delete_buffer,
             },
           },
