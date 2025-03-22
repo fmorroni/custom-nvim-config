@@ -29,3 +29,5 @@ vim.opt.shiftwidth = 2
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.wo.foldlevel = 5
+
+vim.opt.nrformats:append('alpha')
