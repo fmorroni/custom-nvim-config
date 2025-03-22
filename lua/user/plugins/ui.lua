@@ -3,7 +3,7 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
-      theme = 'gruvbox',
+      theme = 'tokyonight',
       sections = {
         lualine_x = { '%S', 'encoding', 'fileformat', 'filetype' },
         lualine_c = {
