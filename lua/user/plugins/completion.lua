@@ -5,6 +5,7 @@ return {
 
     -- use a release tag to download pre-built binaries
     version = '*',
+    dependencies = { 'L3MON4D3/LuaSnip', version = '*' },
 
     opts = {
       keymap = {
@@ -33,6 +34,7 @@ return {
         nerd_font_variant = 'mono'
       },
 
+      snippets = { preset = 'luasnip' },
       sources = {
         default = { "lazydev", "lsp", "path", "snippets", "buffer" },
         providers = {
