@@ -52,6 +52,22 @@ return {
       --   enabled = true,
       --   window = { show_documentation = false },
       -- },
+
+      completion = {
+        menu = {
+          -- Don't automatically show the completion menu
+          -- auto_show = false,
+
+          -- nvim-cmp style menu
+          draw = {
+            columns = {
+              { "label",      "label_description", gap = 1 },
+              { "source_name" },
+              { "kind_icon",  "kind",              gap = 1 }
+            },
+          }
+        },
+      }
     },
   }
 }
