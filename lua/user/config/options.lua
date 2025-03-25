@@ -31,3 +31,5 @@ vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.wo.foldlevel = 5
 
 vim.opt.nrformats:append('alpha')
+
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"

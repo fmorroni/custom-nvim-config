@@ -11,21 +11,27 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    dependencies = { "williamboman/mason.nvim", 'saghen/blink.cmp' },
+    dependencies = { "williamboman/mason.nvim", 'saghen/blink.cmp', 'SmiteshP/nvim-navic' },
     config = function()
       require("mason-lspconfig").setup()
-      require("mason-lspconfig").setup_handlers {
+      require("mason-lspconfig").setup_handlers({
         -- Default handler
         function(server_name)
-          local capabilities = require('blink.cmp').get_lsp_capabilities()
-          require("lspconfig")[server_name].setup({ capabilities = capabilities })
+          require("lspconfig")[server_name].setup({
+            capabilities = require('blink.cmp').get_lsp_capabilities(),
+            on_attach = function(client, bufnr)
+              if client.server_capabilities.documentSymbolProvider then
+                require("nvim-navic").attach(client, bufnr)
+              end
+            end
+          })
         end,
         -- Next, you can provide a dedicated handler for specific servers.
         -- For example, a handler override for the `rust_analyzer`:
         -- ["rust_analyzer"] = function ()
         --     require("rust-tools").setup {}
         -- end
-      }
+      })
       require('user.plugins.lsp.keymaps')
     end,
   },
