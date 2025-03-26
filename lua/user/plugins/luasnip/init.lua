@@ -30,10 +30,10 @@ return {
         end
       end
       return {
-        { "<C-l>", mode = { "n", "v", "i" }, function() ls.jump(1) end,        desc = "Jump forward" },
-        { "<C-h>", mode = { "n", "v", "i" }, function() ls.jump(-1) end,       desc = "Jump backward" },
-        { "<C-p>", mode = { "n", "v", "i" }, function() change_choice(1) end,  desc = "Change choice forward" },
-        { "<C-o>", mode = { "n", "v", "i" }, function() change_choice(-1) end, desc = "Change choice backward" },
+        { "<C-l>", mode = { "v", "i" }, function() ls.jump(1) end,        desc = "Jump forward" },
+        { "<C-h>", mode = { "v", "i" }, function() ls.jump(-1) end,       desc = "Jump backward" },
+        { "<C-p>", mode = { "v", "i" }, function() change_choice(1) end,  desc = "Change choice forward" },
+        { "<C-o>", mode = { "v", "i" }, function() change_choice(-1) end, desc = "Change choice backward" },
       }
     end
   }
