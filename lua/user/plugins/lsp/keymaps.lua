@@ -32,6 +32,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     bufmap('n', '<leader>lj', vim.diagnostic.goto_next)
     bufmap('n', '<leader>lk', vim.diagnostic.goto_prev)
+    bufmap('n', '<leader>lej', function() vim.diagnostic.goto_next({ severity = "ERROR" }) end)
+    bufmap('n', '<leader>lek', function() vim.diagnostic.goto_prev({ severity = "ERROR" }) end)
+    bufmap('n', '<leader>lwj', function() vim.diagnostic.goto_next({ severity = "WARN" }) end)
+    bufmap('n', '<leader>lwk', function() vim.diagnostic.goto_prev({ severity = "WARN" }) end)
     bufmap('n', 'gl', vim.diagnostic.open_float)
   end
 })
