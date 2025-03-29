@@ -7,9 +7,12 @@ map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 map('n', '<leader>w', '<CMD>update<CR>', { desc = 'Save file' })
+map('n', '<leader>c', '<CMD>bdelete<CR>', {desc = "Close current buffer"})
+map('n', '<leader>q', '<CMD>q<CR>', { desc = 'Quit' })
+
 map('n', '<leader>o', 'o<ESC>0"_D', { desc = 'Newline beneath' })
 map('n', '<leader>O', 'O<ESC>0"_D', { desc = 'Newline above' })
-map('n', '<leader>q', '<CMD>q<CR>', { desc = 'Quit' })
+map("n", "<leader>h", "<CMD>noh<CR>", { desc = "Clear search highlight" })
 
 map('n', "<c-p>", "<c-i>")
 map('n', "<tab>", ">>")
@@ -39,11 +42,6 @@ map('n', "<leader>:", "q:", { desc = 'Open advanced command line' })
 
 -- I never use U and this is a lot more comfortable for redoing.
 map('n', "U", "<c-r>")
-
--- Clear highlights
-map('n', '<leader>h', '<CMD>noh<CR>')
--- Close current buffer
-map('n', '<leader>c', '<CMD>bdelete<CR>')
 
 -- Move line down/up
 map('n', '<A-j>', '<CMD>m +1<CR>')
