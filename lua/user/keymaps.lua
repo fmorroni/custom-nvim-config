@@ -44,8 +44,10 @@ map('n', "<leader>:", "q:", { desc = 'Open advanced command line' })
 map('n', "U", "<c-r>")
 
 -- Move line down/up
-map('n', '<A-j>', '<CMD>m +1<CR>')
-map('n', '<A-k>', '<CMD>m -2<CR>')
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
 map('n', '<leader>lp', '<CMD>Lazy<CR>')
 map('n', '<leader>li', '<CMD>LspInfo<CR>')
