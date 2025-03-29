@@ -27,13 +27,37 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 5
 
+-- Confirm to save changes before exiting modified buffer.
+vim.opt.confirm = true
+
+-- Use spaces instead of tabs.
 vim.opt.expandtab = true
-vim.opt.tabstop = 2
+-- Size of an indent.
 vim.opt.shiftwidth = 2
+-- Round indent to multiple of `shiftwidth`.
+vim.opt.shiftround = true
+-- Number of spaces tabs count for.
+vim.opt.tabstop = 2
+-- Insert indents automatically.
+vim.opt.smartindent = true
 
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.wo.foldlevel = 5
+
+-- Not sure if I want line wrapping yet.
+-- -- Wrap lines at convenient points.
+-- vim.opt.linebreak = true
+
+-- -- Automatically saves undo history to an undo file.
+-- -- vim.opt.undofile = true
+
+-- -- Allow cursor to move where there is no text in visual block mode.
+-- vim.opt.virtualedit = "block"
+
+-- -- Enable line wrap.
+-- vim.opt.wrap = true
+
 
 vim.opt.nrformats:append('alpha')
 
