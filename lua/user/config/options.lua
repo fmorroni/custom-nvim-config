@@ -45,20 +45,19 @@ vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.wo.foldlevel = 5
 
--- Not sure if I want line wrapping yet.
--- -- Wrap lines at convenient points.
--- vim.opt.linebreak = true
+-- Enable line wrap.
+vim.opt.wrap = true
+-- Wrap lines at convenient points.
+vim.opt.linebreak = true
 
--- -- Automatically saves undo history to an undo file.
--- -- vim.opt.undofile = true
+-- Automatically saves undo history to an undo file.
+vim.opt.undofile = true
 
--- -- Allow cursor to move where there is no text in visual block mode.
--- vim.opt.virtualedit = "block"
+-- Allow cursor to move where there is no text in visual block mode.
+vim.opt.virtualedit = "block"
 
--- -- Enable line wrap.
--- vim.opt.wrap = true
-
-
+-- Can increment letters.
 vim.opt.nrformats:append('alpha')
 
+-- Add code breadcrumbs to winbar.
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
